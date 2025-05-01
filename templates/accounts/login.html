@@ -1,0 +1,26 @@
+<form method="post">
+    {% csrf_token %}
+
+    {% if form.errors %}
+        <ul style="color: red;">
+            {% for field, errors in form.errors.items %}
+                {% for error in errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <div>
+        {{ form.username.label_tag }}
+        {{ form.username }}
+    </div>
+
+    <div>
+        {{ form.password.label_tag }}
+        {{ form.password }}
+    </div>
+
+    <button type="submit">Saqlash</button>
+  <a href="{% url 'register' %}">register</a>
+</form>

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Books</h3>
+<a href="{% url 'book-create' %}">Create book</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">price</th>
+      <th scope="col">published_year</th>
+      <th scope="col">description</th>
+      <th scope="col">delete</th>
+      <th scope="col">edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ book.title }}</td>
+      <td>{{ book.price }}</td>
+      <td>{{ book.published_year }}</td>
+      <td>{{ book.description }}</td>
+      <td><a href="{% url 'book-delete' book.pk %}">delete</a> </td>
+      <td><a href="{% url 'book-edit' book.pk %}">edit</a> </td>
+      {% if book.file %}
+      <td><a href="{{ book.file.url }}">upload</a> </td>
+      {% else %}
+      <td>Kitob file yoq</td>
+      {% endif %}
+    </tr>
+
+  </tbody>
+</table>
+<a href="{% url 'book-list' %}">back</a>
+
+
+{% endblock %}
