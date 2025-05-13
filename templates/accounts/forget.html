@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Parolni tiklash</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            text-align: center;
+            padding-top: 100px;
+        }
+        .container {
+            background-color: white;
+            padding: 40px;
+            margin: auto;
+            width: 400px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Sizning emailingizga parolni tiklash havolasi yuborildi</h2>
+    <p>Iltimos, emailingizni tekshiring va ko‘rsatmalarga amal qiling.</p>
+    <a href="{% url 'login' %}">Login sahifasiga qaytish</a>
+</div>
+
+</body>
+</html>

@@ -12,6 +12,7 @@ class UserForm(forms.ModelForm):
         model = CustomUser
         fields = [
             'username',
+            'email',
             'first_name',
             'last_name',
             'phone_number',
@@ -63,3 +64,11 @@ class LoginForm(forms.Form):
         # return {'user': user}
 
 
+class ForgetForm(forms.Form):
+    username = forms.CharField(max_length=40)
+
+
+class ResetForm(forms.Form):
+    code = forms.CharField(max_length=6)
+    password = forms.CharField(max_length=50)
+    re_password = forms.CharField(max_length=50)

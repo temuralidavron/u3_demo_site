@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Books</h3>
+<a href="{% url 'tran_create' %}">Create tran</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">price</th>
+      <th scope="col">published_year</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  {% for transaction in transactions %}
+  <tbody>
+    <tr>
+      <td>{{ transaction.from_user }}</td>
+      <td>{{ transaction.to_user }}</td>
+      <td>{{ transaction.amount }}</td>
+
+
+
+
+
+
+    </tr>
+
+  </tbody>
+  {% endfor %}
+</table>
+
+
+
+{% endblock %}

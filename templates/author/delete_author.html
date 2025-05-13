@@ -1,0 +1,10 @@
+
+{% block content %}
+<h3>Siz rostan ham shuni ochirasizmi {{ author.full_name }}</h3>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+
+    <button type="submit">Saqlash</button>
+</form>
+
+{% endblock%}
